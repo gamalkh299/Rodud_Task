@@ -11,6 +11,6 @@ enum ResponseMethodEnum: string
     case SHOW               =   'show';
     case UNPROCESSABLE      =   'unprocessable';
     case CUSTOM_SINGLE      =   'custom_single';
-    case CUSTOM_COLLECTION  =   'custom_colection';
+    case CUSTOM_COLLECTION  =   'custom_collection';
     case CUSTOM             =   'custom';
 }
