@@ -44,4 +44,17 @@ enum OrderStatus : string
         ];
     }
 
+    //to select the order status in the order form
+    public static function getSelectOptions(): array
+    {
+        return [
+            self::Pending->value => 'Pending',
+            self::InProgress->value => 'In Progress',
+            self::Shipped->value => 'Shipped',
+            self::Delivered->value => 'Delivered',
+            self::Canceled->value => 'Canceled',
+            self::Returned->value => 'Returned',
+        ];
+    }
+
 }

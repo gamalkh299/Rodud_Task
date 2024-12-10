@@ -4,9 +4,11 @@ namespace App\Nova;
 
 use App\Enums\Order\OrderStatus;
 use Illuminate\Http\Request;
-use Laravel\Nova\Badge;
+use Laravel\Nova\Fields\Badge;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -51,14 +53,48 @@ class Order extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('Loading Location', 'loading_location'),
+
+            Text::make('Weight', function () {
+                return $this->weight . ' ' . $this->weight_unit;
+            }),
+            Text::make('Size', 'size'),
+            Text::make('Loading Location', 'loading_location')
+                ->sortable()
+                ->rules('required', 'max:255'),
+
             Text::make('Delivery Location', 'delivery_location'),
-            DateTime::make('Pickup Time', 'pickup_time'),
-            DateTime::make('Delivery Time', 'delivery_time'),
-            \Laravel\Nova\Fields\Badge::make('order_status')->map(OrderStatus::getStatusesWithColors())->withIcons(),
+            DateTime::make('Pickup Time', 'pickup_time')
+                ->onlyOnDetail()
+                ->sortable()
+                ->rules('required'),
 
+            DateTime::make('Delivery Time', 'delivery_time')
+                ->onlyOnDetail()
+                ->sortable()
+                ->rules('required'),
 
+            Badge::make('Order Status','order_status')
+                ->map(OrderStatus::getStatusesWithColors())
+                ->withIcons(),
 
+            Select::make('Order Status', 'order_status')
+                ->options(OrderStatus::getSelectOptions())
+                ->displayUsingLabels()
+                ->sortable()
+                ->rules('required')
+                ->hideFromDetail()
+                ->hideFromIndex(),
+
+            Text::make('Truck Type', 'truck_type')
+                ->sortable()
+                ->rules('required', 'max:255'),
+
+            //Relationships
+            BelongsTo::make('User', 'user', User::class)
+                ->rules('required')
+                ->searchable()
+                ->sortable()
+                ->onlyOnDetail(),
         ];
     }
 
