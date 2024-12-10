@@ -31,8 +31,8 @@ class signInRequest extends ApiMasterSingleMessageRequest
     public function messages(): array
     {
         return [
-            'email.required'=> __('Phone number is required'),
-            'email.exists'  => __('Phone number does not exist'),
+            'email.required'=> __('email is required'),
+            'email.exists'  => __('email does not exist'),
             'password.required'    => __('Password is required'),
         ];
     }
