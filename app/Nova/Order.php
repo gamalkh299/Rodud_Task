@@ -5,11 +5,13 @@ namespace App\Nova;
 use App\Enums\Order\OrderStatus;
 use App\Enums\Order\Size;
 use App\Enums\Order\WeightUnit;
+use App\Notifications\OrderStatusUpdatedNotification;
 use App\Nova\Actions\Order\MarkOrderAsCanceled;
 use App\Nova\Actions\Order\MarkOrderAsDelivered;
 use App\Nova\Actions\Order\MarkOrderAsInProgress;
 use App\Nova\Actions\Order\MarkOrderAsShipped;
 use App\Nova\Metrics\Orders\TotalOrders;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Badge;
 use Laravel\Nova\Fields\BelongsTo;
@@ -133,6 +135,7 @@ class Order extends Resource
                 ->onlyOnDetail(),
         ];
     }
+
 
     /**
      * Get the cards available for the request.
