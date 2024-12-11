@@ -48,12 +48,12 @@ enum OrderStatus : string
     public static function getSelectOptions(): array
     {
         return [
-            self::Pending->value => 'Pending',
-            self::InProgress->value => 'In Progress',
-            self::Shipped->value => 'Shipped',
-            self::Delivered->value => 'Delivered',
-            self::Canceled->value => 'Canceled',
-            self::Returned->value => 'Returned',
+            self::Pending->name => 'Pending',
+            self::InProgress->name => 'In Progress',
+            self::Shipped->name => 'Shipped',
+            self::Delivered->name => 'Delivered',
+            self::Canceled->name => 'Canceled',
+            self::Returned->name => 'Returned',
         ];
     }
 

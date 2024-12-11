@@ -50,4 +50,25 @@ class AuthController extends Controller
 
 
     }
+
+    public function logout()
+    {
+        auth('api')->user()->tokens()->delete();
+        return generalApiResponse(
+            method: ResponseMethodEnum::CUSTOM,
+            custom_message: __('Logged out successfully'),
+            custom_status_msg: 'success',
+            custom_status: 200
+        );
+    }
+
+    public function user()
+    {
+        return generalApiResponse(
+            method: ResponseMethodEnum::CUSTOM_SINGLE,
+            resource: UserResource::class,
+            data_passed: auth('api')->user(),
+            custom_message: __('User retrieved successfully')
+        );
+    }
 }

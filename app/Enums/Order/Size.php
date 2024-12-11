@@ -9,6 +9,18 @@ enum Size : string
     case Large = 'Large';
     case ExtraLarge = 'Extra Large';
 
+    public static function toArray(): array
+    {
+        return [
+            self::Small->name => 'Small',
+            self::Medium->name => 'Medium',
+            self::Large->name => 'Large',
+            self::ExtraLarge->name => 'Extra Large',
+        ];
+    }
+
+
+
 
 
 

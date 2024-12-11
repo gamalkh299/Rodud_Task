@@ -3,6 +3,13 @@
 namespace App\Nova;
 
 use App\Enums\Order\OrderStatus;
+use App\Enums\Order\Size;
+use App\Enums\Order\WeightUnit;
+use App\Nova\Actions\Order\MarkOrderAsCanceled;
+use App\Nova\Actions\Order\MarkOrderAsDelivered;
+use App\Nova\Actions\Order\MarkOrderAsInProgress;
+use App\Nova\Actions\Order\MarkOrderAsShipped;
+use App\Nova\Metrics\Orders\TotalOrders;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Badge;
 use Laravel\Nova\Fields\BelongsTo;
@@ -26,7 +33,7 @@ class Order extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'loading_location';
 
     /**
      * The columns that should be searched.
@@ -52,12 +59,39 @@ class Order extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->sortable('desc'),
 
             Text::make('Weight', function () {
-                return $this->weight . ' ' . $this->weight_unit;
-            }),
-            Text::make('Size', 'size'),
+                return $this->weight . ' ' . $this->weight_unit->label();
+
+            })
+                ->sortable()
+                ->rules('required', 'max:255'),
+
+            //to add weight field
+            Text::make('Weight', 'weight')
+                ->sortable()
+                ->rules('required', 'max:255')
+                ->hideFromIndex()
+                ->hideFromDetail(),
+
+            //to add weight_unit field
+            Select::make('Weight Unit', 'weight_unit')
+                ->options(WeightUnit::toArray())
+                ->displayUsingLabels()
+                ->sortable()
+                ->rules('required', 'max:255')
+                ->hideFromIndex()
+                ->hideFromDetail(),
+
+            Select::make('Size', 'size')
+                ->options(Size::toArray())
+                ->displayUsingLabels()
+                ->sortable()
+                ->hideFromIndex()
+                ->hideFromDetail()
+                ->rules('required'),
+
             Text::make('Loading Location', 'loading_location')
                 ->sortable()
                 ->rules('required', 'max:255'),
@@ -69,9 +103,10 @@ class Order extends Resource
                 ->rules('required'),
 
             DateTime::make('Delivery Time', 'delivery_time')
-                ->onlyOnDetail()
+                ->hideFromIndex()
                 ->sortable()
-                ->rules('required'),
+                ->rules('required')
+            ,
 
             Badge::make('Order Status','order_status')
                 ->map(OrderStatus::getStatusesWithColors())
@@ -87,7 +122,8 @@ class Order extends Resource
 
             Text::make('Truck Type', 'truck_type')
                 ->sortable()
-                ->rules('required', 'max:255'),
+                ->rules('required', 'max:255')
+                ->onlyOnDetail(),
 
             //Relationships
             BelongsTo::make('User', 'user', User::class)
@@ -106,7 +142,12 @@ class Order extends Resource
      */
     public function cards(NovaRequest $request)
     {
-        return [];
+        return [
+            (new TotalOrders())->width('1/3'),
+            (new Metrics\Orders\AvarageOfOrders)->width('1/3'),
+            (new Metrics\Orders\OrdersStatus)->width('1/3'),
+
+        ];
     }
 
     /**
@@ -117,7 +158,9 @@ class Order extends Resource
      */
     public function filters(NovaRequest $request)
     {
-        return [];
+        return [
+            new Filters\Order\OrderStatusFilter(),
+        ];
     }
 
     /**
@@ -139,6 +182,15 @@ class Order extends Resource
      */
     public function actions(NovaRequest $request)
     {
-        return [];
+        return [
+            (new MarkOrderAsInProgress())
+                ->showInline(),
+            (new MarkOrderAsShipped())
+                ->showInline(),
+            (new MarkOrderAsDelivered())
+                ->showInline(),
+            (new MarkOrderAsCanceled())
+                ->showInline(),
+        ];
     }
 }

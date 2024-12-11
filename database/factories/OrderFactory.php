@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\Order\OrderStatus;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -19,15 +20,15 @@ class OrderFactory extends Factory
     {
         return [
             'user_id'=>User::all()->random()->id,
-            'size'=>$this->faker->randomElement(['Small','Medium','Large','Extra Large']),
+            'size'=>$this->faker->randomElement(array_values(\App\Enums\Order\Size::toArray())),
             'weight'=>$this->faker->randomFloat(2, 1, 1000),
-            'weight_unit'=>$this->faker->randomElement(['Tone','kg', 'g']),
+            'weight_unit'=>$this->faker->randomElement(array_values(\App\Enums\Order\WeightUnit::toArray())),
             'loading_location'=>$this->faker->address,
             'delivery_location'=>$this->faker->address,
             'pickup_time'=>$this->faker->dateTime(),
             'delivery_time'=>now()->addDays(rand(1,10)),
-            'order_status'=>$this->faker->randomElement(['Pending','In Progress','Delivered']),
-            'truck_type'=>$this->faker->randomElement(['Small','Medium','Large','Extra Large']),
+            'order_status'=>$this->faker->randomElement(array_values(OrderStatus::getSelectOptions())),
+            'truck_type'=>$this->faker->randomElement(array_values(\App\Enums\Order\TruckType::toArray())),
 
         ];
     }

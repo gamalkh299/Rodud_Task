@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
 class Admin extends Model implements Authenticatable
 {
 
-    use \Illuminate\Auth\Authenticatable;
+    use \Illuminate\Auth\Authenticatable , Notifiable;
 
 
     protected $fillable = [
