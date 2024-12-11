@@ -160,6 +160,9 @@ class Order extends Resource
     {
         return [
             new Filters\Order\OrderStatusFilter(),
+            new Filters\Order\FilterByDate('pickup_time'),
+            new Filters\Order\FilterByDate('delivery_time'),
+
         ];
     }
 
