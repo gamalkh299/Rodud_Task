@@ -1,0 +1,1004 @@
+{
+	"info": {
+		"_postman_id": "fbde61c8-3fb0-4c52-a347-83b34d44fec2",
+		"name": "Rodud Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15183358"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "gamal ",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "user4@test.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url-local}}api/auth/register",
+							"host": [
+								"{{url-local}}api"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "gamal ",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "user4@test.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "password",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url-local}}api/auth/register",
+									"host": [
+										"{{url-local}}api"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 10 Dec 2024 12:15:22 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1q mod_fcgid/2.3.10-dev"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.22"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"name\": \"gamal\",\n        \"email\": \"user4@test.com\",\n        \"token\": \"1|G7YajSC8GdwrooA4thPenoXvPJnR2HsYN9AD5irL5c431452\"\n    },\n    \"status\": \"success\",\n    \"message\": \"User created successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "user3@test.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url-local}}api/auth/login",
+							"host": [
+								"{{url-local}}api"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "user@test.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url-local}}api/auth/login",
+									"host": [
+										"{{url-local}}api"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 10 Dec 2024 12:34:10 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1q mod_fcgid/2.3.10-dev"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.22"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"gamal\",\n        \"email\": \"user@test.com\",\n        \"token\": \"3|E9dQsPzg7CRkzB63mFmki3xbBlfs7Qy2lw5Zqnwob9589108\"\n    },\n    \"status\": \"success\",\n    \"message\": \"success login\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-local}}api/auth/logout",
+							"host": [
+								"{{url-local}}api"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Logout",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url-local}}api/auth/logout",
+									"host": [
+										"{{url-local}}api"
+									],
+									"path": [
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 11 Dec 2024 11:51:29 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1q mod_fcgid/2.3.10-dev"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.22"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": null,\n    \"message\": \"Logged out successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get User Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-local}}api/auth/user",
+							"host": [
+								"{{url-local}}api"
+							],
+							"path": [
+								"auth",
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get User Info",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url-local}}api/auth/user",
+									"host": [
+										"{{url-local}}api"
+									],
+									"path": [
+										"auth",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 11 Dec 2024 11:50:58 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1q mod_fcgid/2.3.10-dev"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.22"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"gamal\",\n        \"email\": \"user@test.com\"\n    },\n    \"status\": \"success\",\n    \"message\": \"User retrieved successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Get Auth User Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-local}}api/orders",
+							"host": [
+								"{{url-local}}api"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Orders Of User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url-local}}api/orders",
+									"host": [
+										"{{url-local}}api"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 11 Dec 2024 11:54:33 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1q mod_fcgid/2.3.10-dev"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.22"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 1,\n            \"size\": \"Large\",\n            \"weight\": \"351.46\",\n            \"weight_unit\": \"g\",\n            \"loading_location\": \"3008 Braun Branch Apt. 883\\nBrekkeside, AZ 91591\",\n            \"delivery_location\": \"6517 Brianne Isle\\nWest Marisol, TN 90155\",\n            \"pickup_time\": \"2015-07-19T00:19:20.000000Z\",\n            \"delivery_time\": \"2024-12-15T20:45:05.000000Z\",\n            \"order_status\": \"Pending\",\n            \"truck_type\": \"Medium\",\n            \"created_at\": \"2024-12-10T20:45:05.000000Z\",\n            \"updated_at\": \"2024-12-10T20:45:05.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"user_id\": 1,\n            \"size\": \"Extra Large\",\n            \"weight\": \"495.40\",\n            \"weight_unit\": \"kg\",\n            \"loading_location\": \"776 Rowe Point Apt. 933\\nSchroedertown, WA 82375\",\n            \"delivery_location\": \"246 Christiansen Manors Apt. 225\\nBroderickport, NE 65616-7659\",\n            \"pickup_time\": \"1989-12-24T15:09:13.000000Z\",\n            \"delivery_time\": \"2024-12-14T20:45:05.000000Z\",\n            \"order_status\": \"Delivered\",\n            \"truck_type\": \"Extra Large\",\n            \"created_at\": \"2024-12-10T20:45:05.000000Z\",\n            \"updated_at\": \"2024-12-10T20:45:05.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"user_id\": 1,\n            \"size\": \"Small\",\n            \"weight\": \"995.77\",\n            \"weight_unit\": \"g\",\n            \"loading_location\": \"7580 Cartwright Rue Apt. 128\\nJessycachester, OR 18748-4150\",\n            \"delivery_location\": \"1657 Rashad Rest Suite 012\\nPort Cleta, MS 11619-8165\",\n            \"pickup_time\": \"2017-12-19T09:18:52.000000Z\",\n            \"delivery_time\": \"2024-12-16T20:45:05.000000Z\",\n            \"order_status\": \"Pending\",\n            \"truck_type\": \"Extra Large\",\n            \"created_at\": \"2024-12-10T20:45:05.000000Z\",\n            \"updated_at\": \"2024-12-10T20:45:05.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"user_id\": 1,\n            \"size\": \"Extra Large\",\n            \"weight\": \"934.65\",\n            \"weight_unit\": \"kg\",\n            \"loading_location\": \"2506 Harmony Oval\\nMauriceville, NE 24268-1487\",\n            \"delivery_location\": \"43426 Schumm Plaza Suite 615\\nVicentaport, CO 32818\",\n            \"pickup_time\": \"1977-02-05T12:30:52.000000Z\",\n            \"delivery_time\": \"2024-12-12T20:45:05.000000Z\",\n            \"order_status\": \"Pending\",\n            \"truck_type\": \"Large\",\n            \"created_at\": \"2024-12-10T20:45:05.000000Z\",\n            \"updated_at\": \"2024-12-10T20:45:05.000000Z\"\n        }\n    ],\n    \"status\": \"success\",\n    \"message\": \"Orders retrieved successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "size",
+									"value": "Small",
+									"description": "['Small'=> 'Small', 'Medium'=> 'Medium', 'Large'=> 'Large', 'Extra Large'=> 'Extra Large',]",
+									"type": "text"
+								},
+								{
+									"key": "weight",
+									"value": "2500",
+									"type": "text"
+								},
+								{
+									"key": "weight_unit",
+									"value": "KG",
+									"type": "text"
+								},
+								{
+									"key": "loading_location",
+									"value": "Sanstifano , England,  UK",
+									"type": "text"
+								},
+								{
+									"key": "delivery_location",
+									"value": "New Cairo , Cairo, EG",
+									"type": "text"
+								},
+								{
+									"key": "pickup_time",
+									"value": "2024-12-21 22:00:00",
+									"type": "text"
+								},
+								{
+									"key": "delivery_time",
+									"value": "2025-01-02 22:00:00",
+									"type": "text"
+								},
+								{
+									"key": "truck_type",
+									"value": "Medium",
+									"description": "['Small' => 'Small','Medium' => 'Medium','Large' => 'Large', 'Extra Large' => 'Extra Large'];",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url-local}}api/orders/create",
+							"host": [
+								"{{url-local}}api"
+							],
+							"path": [
+								"orders",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Order",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "size",
+											"value": "Small",
+											"description": "['Small'=> 'Small', 'Medium'=> 'Medium', 'Large'=> 'Large', 'Extra Large'=> 'Extra Large',]",
+											"type": "text"
+										},
+										{
+											"key": "weight",
+											"value": "2500",
+											"type": "text"
+										},
+										{
+											"key": "weight_unit",
+											"value": "kg",
+											"type": "text"
+										},
+										{
+											"key": "loading_location",
+											"value": "Sanstifano , England,  UK",
+											"type": "text"
+										},
+										{
+											"key": "delivery_location",
+											"value": "New Cairo , Cairo, EG",
+											"type": "text"
+										},
+										{
+											"key": "pickup_time",
+											"value": "2024-12-21 22:00:00",
+											"type": "text"
+										},
+										{
+											"key": "delivery_time",
+											"value": "2025-01-01 22:00:00",
+											"type": "text"
+										},
+										{
+											"key": "truck_type",
+											"value": "Medium",
+											"description": "['Small' => 'Small','Medium' => 'Medium','Large' => 'Large', 'Extra Large' => 'Extra Large'];",
+											"type": "text"
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url-local}}api/orders/create",
+									"host": [
+										"{{url-local}}api"
+									],
+									"path": [
+										"orders",
+										"create"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 11 Dec 2024 14:09:44 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1q mod_fcgid/2.3.10-dev"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.22"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"size\": \"Small\",\n        \"weight\": \"1500\",\n        \"weight_unit\": \"kg\",\n        \"loading_location\": \"Sanstifano , England,  UK\",\n        \"delivery_location\": \"New Cairo , Cairo, EG\",\n        \"pickup_time\": \"2024-12-21T22:00:00.000000Z\",\n        \"delivery_time\": \"2025-01-01T22:00:00.000000Z\",\n        \"truck_type\": \"Medium\",\n        \"user_id\": 3,\n        \"updated_at\": \"2024-12-11T14:09:44.000000Z\",\n        \"created_at\": \"2024-12-11T14:09:44.000000Z\",\n        \"id\": 13\n    },\n    \"status\": \"success\",\n    \"message\": \"Order created successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Notifications",
+			"item": [
+				{
+					"name": "Get All Notifications",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url-local}}api/auth/notifications",
+							"host": [
+								"{{url-local}}api"
+							],
+							"path": [
+								"auth",
+								"notifications"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Notifications",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url-local}}api/auth/notifications",
+									"host": [
+										"{{url-local}}api"
+									],
+									"path": [
+										"auth",
+										"notifications"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 12 Dec 2024 18:49:26 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1q mod_fcgid/2.3.10-dev"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.22"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": [\n        {\n            \"id\": \"d4680393-0534-460d-8f33-e8b06434c7b4\",\n            \"type\": \"App\\\\Notifications\\\\OrderStatusUpdatedNotification\",\n            \"notifiable_type\": \"App\\\\Models\\\\User\",\n            \"notifiable_id\": 3,\n            \"data\": {\n                \"order_id\": 159,\n                \"order_status\": \"Delivered\"\n            },\n            \"read_at\": null,\n            \"created_at\": \"2024-12-11T22:00:34.000000Z\",\n            \"updated_at\": \"2024-12-11T22:00:34.000000Z\"\n        },\n        {\n            \"id\": \"ff9e73cd-d276-4b8f-b819-2dd1760dcc22\",\n            \"type\": \"App\\\\Notifications\\\\OrderStatusUpdatedNotification\",\n            \"notifiable_type\": \"App\\\\Models\\\\User\",\n            \"notifiable_id\": 3,\n            \"data\": {\n                \"order_id\": 161,\n                \"order_status\": \"Delivered\"\n            },\n            \"read_at\": null,\n            \"created_at\": \"2024-12-11T21:59:42.000000Z\",\n            \"updated_at\": \"2024-12-11T21:59:42.000000Z\"\n        }\n    ],\n    \"message\": \"Notifications retrieved successfully\"\n}"
+						},
+						{
+							"name": "All Notifications Marked As Read Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url-local}}api/auth/notifications",
+									"host": [
+										"{{url-local}}api"
+									],
+									"path": [
+										"auth",
+										"notifications"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 12 Dec 2024 18:53:43 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1q mod_fcgid/2.3.10-dev"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.22"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": [\n        {\n            \"id\": \"d4680393-0534-460d-8f33-e8b06434c7b4\",\n            \"type\": \"App\\\\Notifications\\\\OrderStatusUpdatedNotification\",\n            \"notifiable_type\": \"App\\\\Models\\\\User\",\n            \"notifiable_id\": 3,\n            \"data\": {\n                \"order_id\": 159,\n                \"order_status\": \"Delivered\"\n            },\n            \"read_at\": \"2024-12-12T18:53:18.000000Z\",\n            \"created_at\": \"2024-12-11T22:00:34.000000Z\",\n            \"updated_at\": \"2024-12-12T18:53:18.000000Z\"\n        },\n        {\n            \"id\": \"ff9e73cd-d276-4b8f-b819-2dd1760dcc22\",\n            \"type\": \"App\\\\Notifications\\\\OrderStatusUpdatedNotification\",\n            \"notifiable_type\": \"App\\\\Models\\\\User\",\n            \"notifiable_id\": 3,\n            \"data\": {\n                \"order_id\": 161,\n                \"order_status\": \"Delivered\"\n            },\n            \"read_at\": \"2024-12-12T18:53:18.000000Z\",\n            \"created_at\": \"2024-12-11T21:59:42.000000Z\",\n            \"updated_at\": \"2024-12-12T18:53:18.000000Z\"\n        }\n    ],\n    \"message\": \"Notifications retrieved successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Mark Notification As Read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-local}}api/auth/markAsRead",
+							"host": [
+								"{{url-local}}api"
+							],
+							"path": [
+								"auth",
+								"markAsRead"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "markAsRead",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url-local}}api/auth/markAsRead",
+									"host": [
+										"{{url-local}}api"
+									],
+									"path": [
+										"auth",
+										"markAsRead"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 12 Dec 2024 18:53:18 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1q mod_fcgid/2.3.10-dev"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.22"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": null,\n    \"message\": \"All notifications marked as read\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "7|gVqUkNdYKc42ffcUk2jd18ephKxuq0D1Ky9PzM8gc9a916d2",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url-local",
+			"value": "http://rodud_task.test/",
+			"type": "string"
+		}
+	]
+}
