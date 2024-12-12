@@ -54,6 +54,7 @@ class OrderStatusUpdatedNotification extends Notification
         return [
             'order_id' => $this->order->id,
             'order_status' => $this->order->order_status->value,
+            'message' => 'Your order # '.$this->order->id.' status has been updated to ' . $this->order->order_status->value,
         ];
     }
 }

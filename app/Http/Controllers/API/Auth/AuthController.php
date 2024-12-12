@@ -71,4 +71,30 @@ class AuthController extends Controller
             custom_message: __('User retrieved successfully')
         );
     }
+
+    public function notifications(Request $request)
+    {
+        $user = User::where('id', auth('api')->id())->first();
+
+
+        $notifications = $user->notifications()->latest()->get();
+
+        return generalApiResponse(
+            method: ResponseMethodEnum::CUSTOM,
+            data_passed: $notifications,
+            custom_message: __('Notifications retrieved successfully')
+        );
+    }
+
+    public function markAsRead(Request $request)
+    {
+        $user = \auth('api')->user();
+
+        $user->unreadNotifications->markAsRead();
+
+        return generalApiResponse(
+            method: ResponseMethodEnum::CUSTOM,
+            custom_message: __('All notifications marked as read')
+        );
+    }
 }
